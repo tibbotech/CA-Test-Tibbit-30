@@ -1,0 +1,14 @@
+include "global.tbh"
+
+'====================================================================
+sub on_sys_init()
+	tbt30_init(YES)
+end sub
+
+sub on_sys_timer()
+	dim t,h as float
+
+	if tbt30_get_pc(h,t)=OK then
+		sys.debugprint(ftostr(h,FTOSTR_MODE_AUTO,5)+"% "+ftostr(t,FTOSTR_MODE_AUTO,5)+" C"+CR_LF)
+	end if
+end sub

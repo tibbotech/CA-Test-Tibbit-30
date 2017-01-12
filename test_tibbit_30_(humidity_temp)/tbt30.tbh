@@ -1,0 +1,15 @@
+#IF PLATFORM_ID=TPP2WG2 OR PLATFORM_ID=TPP3WG2
+	#define PLATFORM_TYPE_32 1
+#endif
+
+#ifndef TBT30_CLK_PIN
+	#define TBT30_CLK_PIN PL_IO_NULL
+#endif
+
+#ifndef TBT30_DATA_PIN
+	#define TBT30_DATA_PIN PL_IO_NULL
+#endif
+
+declare sub tbt30_init(use_ssi as no_yes)
+declare function tbt30_get_pc(byref humidity as float, byref temperature as float) as ok_ng
+declare function tbt30_get(byref humidity as word, byref temperature as word) as ok_ng

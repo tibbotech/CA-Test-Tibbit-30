@@ -55,7 +55,7 @@ sub tbt30_init(use_ssi as no_yes)
 	if i2c_num_tbt30<4 then
 		ssi.channel=i2c_num_tbt30
 		ssi.enabled=NO
-		ssi.baudrate=5
+		ssi.baudrate=PL_SSI_BAUDRATES_400kHz
 		ssi.clkmap=TBT30_CLK_PIN
 		ssi.dimap=TBT30_DATA_PIN
 		ssi.domap=TBT30_DATA_PIN
